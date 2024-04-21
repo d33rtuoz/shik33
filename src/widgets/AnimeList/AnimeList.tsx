@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { request, gql } from "graphql-request";
 
 const ENDPOINT: string = "https://shikimori.one/api/graphql";
@@ -15,12 +15,13 @@ interface Anime {
 }
 
 export default function AnimeList() {
-  const queryClient = useQueryClient();
-
   const { status, data, error, isFetching } = useQuery({
     queryKey: ["animes"],
     queryFn: async () => {
-      const { animes } = await request(
+      interface Data {
+        animes: Anime[];
+      }
+      const { animes } = await request<Data>(
         ENDPOINT,
         gql`
           {

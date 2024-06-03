@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-const ListItem = ({ key, children }: { key: string; children: ReactNode }) => {
-  return <li key={key}>{children}</li>;
+const ListItem = ({ children }: { key: string; children: ReactNode }) => {
+  return <li>{children}</li>;
 };
 
 export default ListItem;

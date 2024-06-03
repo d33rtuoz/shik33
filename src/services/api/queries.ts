@@ -1,11 +1,13 @@
-const QueryAnime: string = `
-query {
-  animes(limit: 10){
-    id
-    russian
-    url
+import { gql } from "graphql-request";
+
+const QueryAnime: string = gql`
+  query QueryAnime($page: Int!) {
+    animes(page: $page, limit: 50) {
+      id
+      russian
+      url
+    }
   }
-}
 `;
 
 export { QueryAnime };

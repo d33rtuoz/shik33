@@ -1,0 +1,12 @@
+.ListItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-content: start;
+  gap: 6px;
+}
+
+.ListItemLink {
+  text-decoration: none;
+  color: black;
+}

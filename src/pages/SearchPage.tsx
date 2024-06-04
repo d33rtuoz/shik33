@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 
 import { Anime } from "../gql/graphql";
 
-import List from "../components/ui/List";
-import ListItem from "../components/ui/ListItem";
-import Poster from "../components/Poster";
+import List from "../components/ui/List/List";
+import ListItem from "../components/ui/ListItem/ListItem";
+import Poster from "../components/Poster/Poster";
 import { getAnimes } from "../services/api/fetches";
 
 import useElementOnScreen from "../services/hooks/useElementOnScreen";
+import ListItemText from "../components/ui/ListItemText/ListItemText";
 
 const AnimeList = () => {
   const [animes, setAnimes] = useState<Anime[]>([]);
@@ -53,8 +54,9 @@ const AnimeList = () => {
         <List>
           {animes?.map((anime) => {
             return (
-              <ListItem key={anime.id}>
-                <Poster link={anime.url} text={anime.russian || ""} />
+              <ListItem key={anime.id} url={anime.url}>
+                <Poster url={anime.poster?.mainUrl} alt={anime.russian} />
+                <ListItemText text={anime.russian} />
               </ListItem>
             );
           })}

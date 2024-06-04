@@ -6,6 +6,9 @@ const QueryAnime: string = gql`
       id
       russian
       url
+      poster {
+        mainUrl
+      }
     }
   }
 `;

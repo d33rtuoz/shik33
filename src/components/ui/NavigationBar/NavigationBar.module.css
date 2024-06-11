@@ -1,0 +1,28 @@
+.NavigationBar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.NavigationBar__List {
+  margin: 0;
+  padding: 0 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-evenly;
+  gap: 8px;
+  background-color: rgb(242, 236, 238);
+}
+
+.NavigationBar__List__Item {
+  padding: 16px 8px;
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.NavigationBar__List__Item_Active {
+  font-weight: bold;
+}

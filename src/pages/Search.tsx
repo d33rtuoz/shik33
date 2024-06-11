@@ -69,8 +69,8 @@ const AnimeList = () => {
   );
 };
 
-const SearchPage = () => {
+const Search = () => {
   return <AnimeList />;
 };
 
-export default SearchPage;
+export default Search;
